@@ -3,12 +3,12 @@
 const ONLY_CACHE = 'cache-v1'
 
 const APP_SHELL = [
-   '/',
-   '/index.html',
-   '/css/style.css',
-   '/js/app.js',
+   // '/',
+   'index.html',
+   'css/style.css',
+   'js/app.js',
    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
-   '/img/dinero.jpg'
+   'img/dinero.jpg'
 
 ]
 

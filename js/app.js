@@ -1,6 +1,11 @@
+let url = window.location.href
+let swLocation = '/aLaRomana_V1/sw.js'
 
 if (navigator.serviceWorker) {
-   navigator.serviceWorker.register('/sw.js');
+   if (url.includes("localhost")) {
+      swLocation = '/sw.js'
+   }
+   navigator.serviceWorker.register(swLocation);
 }
 
 
