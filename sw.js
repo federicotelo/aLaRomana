@@ -8,7 +8,11 @@ const APP_SHELL = [
    'css/style.css',
    'js/app.js',
    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
-   'img/dinero.jpg'
+   'img/dinero.jpg',
+   'img/icons/icon-192x192.png',
+   'img/icons/icon-256x256.png',
+   'img/icons/icon-384x384.png',
+   'img/icons/icon-512x512.png',
 
 ]
 
