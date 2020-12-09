@@ -1,0 +1,71 @@
+
+     
+      header {
+         font-style: italic;
+         color: rgb(0, 0, 0);
+         padding-top: 5%;
+         background-image: url('/img/dinero.jpg');
+         background-size: 100%;
+         /* font-size:  24px; */
+         text-shadow: 3px 3px 2px rgb(94, 94, 99);
+       
+      }
+      main {
+         margin: 2%;
+      }
+
+      h1 {
+         text-align: center;
+      }
+
+      .inp {
+         border-radius: 10px;
+         /* margin: 2px; */
+         width: 165px;
+      }
+      input {
+         border-radius: 10px;
+         
+      }
+      input:focus {
+         border-radius: 10px;
+         border-color: cornflowerblue;
+         outline: 0;
+         
+      }
+      /* label {
+         margin: 2px;
+      } */
+
+      .edit {
+         align-items:flex-end ;
+         padding: 0%;
+      }
+
+      #conten {
+         display:flex;
+         justify-content: center;
+      }
+
+      #btn1, #btn2 {
+         margin-right: 10px;
+         
+      }
+
+      #spn {
+         text-align: center;
+      }
+
+      h2 {
+         text-align: center;
+      }
+      #pos {
+         color: red;
+      }
+      #neg {
+         color: green;
+      }
+      
+    
+      
+      
