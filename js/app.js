@@ -45,7 +45,7 @@ function guardar() {
 function calcular() {
    if (ig.value) {                // usamos esto si se usa el input de Total Gastado
       return ig.value / nombres.length
-   } else {                       // sino usamos el input de TOTAL GASTADO hacemos esto  
+   } else {                       // si no usamos el input de TOTAL GASTADO hacemos esto  
       let acc = 0;
       for (let i = 0; i < nombres.length; i++) {
          acc = acc + parseInt(nombres[i].inpPuso)
@@ -61,17 +61,17 @@ function res() {
    if (nombres.length == 1) {        //mensajes con informacion final cuando hay SOLO UNA PERSONA
       nombres.map(x => {
          let texto = document.createElement('Li')
-         texto.innerHTML += "<b>" + x.inpNombre + "</b>" + "<br> Gastó <b>$" + x.inpPuso + "</b>. Faltarian: <b>$" + (resultado - x.inpPuso) + "</b><hr>"
+         texto.innerHTML += "<b>" + x.inpNombre + "</b>" + "<br> Gastó <b>$" + x.inpPuso + "</b>. Faltarian: <b>$" + (resultado - x.inpPuso).toFixed(2) + "</b><hr>"
          final.appendChild(texto)
       })
    } else {                          //si hay MAS de UNA PERSONA
-      nombres.map((x, i) => {
+      nombres.map((x) => {
          let texto = document.createElement('Li')
          if (resultado - x.inpPuso > 0) {                 //mensaje con valor POSITIVO
-            texto.innerHTML += "<b>" + x.inpNombre + "</b><br>Gastó<b> $" + x.inpPuso + "</b>. Tiene que poner: <b id='pos'>$" + (resultado - x.inpPuso) + "</b><hr>"
+            texto.innerHTML += "<b>" + x.inpNombre + "</b><br>Gastó<b> $" + x.inpPuso + "</b>. Tiene que poner: <b id='pos'>$" + (resultado - x.inpPuso).toFixed(2) + "</b><hr>"
             final.appendChild(texto)
          } else {                    //mensaje con valor NEGATIVO                    
-            texto.innerHTML += "<b>" + x.inpNombre + "</b><br>Gastó <b>$" + x.inpPuso + "</b>. Hay que devolverle: <b id='neg'>$" + Math.abs((resultado - x.inpPuso)) + "</b><hr>"
+            texto.innerHTML += "<b>" + x.inpNombre + "</b><br>Gastó <b>$" + x.inpPuso + "</b>. Hay que devolverle: <b id='neg'>$" + (Math.abs((resultado - x.inpPuso))).toFixed(2) + "</b><hr>"
             final.appendChild(texto)
          }
       })
