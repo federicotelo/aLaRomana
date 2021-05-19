@@ -9,6 +9,7 @@
    <title>A La Romana</title>
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="manifest" href="manifest.json">
    <link rel="apple-touch-icon" href="img/icons/icon-192x192.png">
@@ -23,7 +24,7 @@
    </header>
 
    <main>
-      <label for="ig">Total Gastado</br>
+      <label for="ig">Cuanto Hay Que Pagar?</br>
          <input type="number" name="ig" placeholder="No lo sabes, no importa"></br>
       </label><br>
       <div class="content">
@@ -31,22 +32,27 @@
             <input type="text" name="nombre" class="inp" required>
          </label>
 
-         <label for="puso">Gastó</br>
+         <label for="puso">Gastó Algo, Cuanto?</br>
             <input type="number" name="puso" class="inp">
          </label>
       </div>
-      <h2>Importe a pagar:<br> <span id="spn"></span></h2>
+      <h2 class="animate__animated animate__backInUp">Importe a pagar:<br> <span id="spn"></span></h2>
       <!-- <p id="prfo"></p></br> -->
       <!-- <ol id="arr"></ol> -->
 
 
       <div id="conten">
-         <button id="btn1" class="btn btn-primary btn">Confirmar</button>
-         <button id="btn2" class="btn btn-primary btn">Borrar</button>
+         <button id="btn1" class="btn btn-primary btn-sm">Agregar Persona</button>
+         <button id="btn3" class="btn btn-primary btn-sm">Modificar</button>
+         <button id="btn2" class="btn btn-primary btn-sm">Borrar</button>
       </div>
 
 
-      <ul id="final"></ul>
+      <div class="animate__animated animate__backInUp conten">
+         <div id='div'></div>
+         <ul id="final"></ul>
+      </div>
+
 
    </main>
 

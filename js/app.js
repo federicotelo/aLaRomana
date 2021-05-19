@@ -18,17 +18,69 @@ let nom = document.querySelector("input[name=nombre]")
 let puso = document.querySelector("input[name=puso]")
 let btn = document.getElementById("btn1")
 let btn2 = document.getElementById("btn2")
+let btn3 = document.getElementById("btn3")  //prueba boton modificar
 let p = document.getElementById("prfo")
 let final = document.getElementById("final")
 
 
 btn.addEventListener("click", guardar)
 btn2.addEventListener("click", () => location.reload())
+btn3.addEventListener("click", modificar)
+
+btn3.disabled = true
+
+function modificar() {
+   document.getElementById('div').innerHTML = '<b id="titulo" ><u>Modificar Importe</u></b>';
+   document.getElementById('final').innerHTML = '';
+   console.log(nombres);
+   btn.hidden = true
+   btn2.hidden = true
+   btn3.hidden = true
+
+   nombres.map((x, i) => {
+      let texto = document.createElement('Li')
+      texto.innerHTML += " <b>" + x.inpNombre + "</b>" + "  Gastó: <b>$" + "</b><input class='inputs' value=" + x.inpPuso + " id=" + i + "><hr>"
+      final.appendChild(texto)
+   })
+
+   let botonOk = document.createElement('button')
+   botonOk.textContent = "Listo"
+   botonOk.id = 'botonok'
+   botonOk.addEventListener('click', cambiar);
+
+   botonOk.className = 'btn btn-primary btn-sm'
+   final.appendChild(botonOk)
+
+}
+
+function cambiar(e) {
+   for (let i = 0; i < nombres.length; i++) {
+      console.log(document.getElementById(i).value)
+      nombres[i].inpPuso = document.getElementById(i).value
+   }
+   document.getElementById('div').innerHTML = ''
+   btn.hidden = false
+   btn2.hidden = false
+   btn3.hidden = false
+   res()
+
+}
+
 
 
 function guardar() {
 
+
    if (nom.value == "") return alert("Falta Nombre")
+   let nomrep = false
+   nombres.map(nombre => {
+      if (nombre.inpNombre == nom.value.charAt(0).toUpperCase() + nom.value.slice(1) && nom.value !== "") {
+         nomrep = true
+      }
+   })
+   console.log(nomrep);
+
+   if (nomrep == true) return alert("Nombre Ya Existente")
    let nombreObj = {
       inpPuso: puso.value,
       inpNombre: nom.value.charAt(0).toUpperCase() + nom.value.slice(1)
@@ -36,10 +88,10 @@ function guardar() {
    if (nombreObj.inpPuso == "") nombreObj.inpPuso = 0
    nombres.push(nombreObj)
    res()
+   btn3.disabled = false
    nom.value = ""
    puso.value = ""
 }
-
 
 
 function calcular() {
@@ -76,7 +128,10 @@ function res() {
          }
       })
    }
+
 }
+
+
 
 // FIN //
 

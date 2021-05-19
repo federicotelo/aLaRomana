@@ -47,9 +47,13 @@
          justify-content: center;
       }
 
-      #btn1, #btn2 {
-         margin-right: 10px;
-         
+      #btn1, #btn2, #btn3 {
+         margin-right: 20px;
+      }
+
+      #btn3 {
+         display: inline-flex;
+         justify-content: center;
       }
 
       #spn {
@@ -64,6 +68,19 @@
       }
       #neg {
          color: green;
+      }
+
+      #div {
+         margin-top: 30;
+         margin-bottom: 5;
+         text-align: center;
+      }
+
+      .inputs {
+         max-width: 30%;
+         display:inline-flex;
+         justify-content: flex-end;
+         border-style:solid;
       }
       
     
