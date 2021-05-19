@@ -1,6 +1,6 @@
 
 // SERVICEWORKER
-const ONLY_CACHE = 'cache-v2'
+const ONLY_CACHE = 'cache-v3'
 
 const APP_SHELL = [
    // '/',
@@ -9,12 +9,12 @@ const APP_SHELL = [
    'js/app.js',
    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
    'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
-   'https://cdn.jsdelivr.net/npm/sweetalert2@11',
+   'https://unpkg.com/sweetalert/dist/sweetalert.min.js',
    'img/dinero.jpg',
    'img/icons/icon-192x192.png',
    'img/icons/icon-256x256.png',
    'img/icons/icon-384x384.png',
-   'img/icons/icon-512x512.png',
+   'img/icons/icon-512x512.png'
 
 ]
 

@@ -78,7 +78,7 @@ function cambiar(e) {
 function guardar() {
 
 
-   if (nom.value == "") return swal.fire("Falta Nombre")
+   if (nom.value == "") return swal("Falta Nombre")
    let nomrep = false
    nombres.map(nombre => {
       if (nombre.inpNombre == nom.value.charAt(0).toUpperCase() + nom.value.slice(1) && nom.value !== "") {
@@ -87,7 +87,7 @@ function guardar() {
    })
    console.log(nomrep);
 
-   if (nomrep == true) return swal.fire("Nombre Ya Existente")
+   if (nomrep == true) return swal("Nombre Ya Existente")
    let nombreObj = {
       inpPuso: puso.value,
       inpNombre: nom.value.charAt(0).toUpperCase() + nom.value.slice(1)
