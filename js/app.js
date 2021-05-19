@@ -13,6 +13,7 @@ if (navigator.serviceWorker) {
 let nombres = [];
 let div = document.getElementById("arr")
 let spn = document.getElementById("spn")
+let h2 = document.getElementById("h2")
 let ig = document.querySelector("input[name=ig]")
 let nom = document.querySelector("input[name=nombre]")
 let puso = document.querySelector("input[name=puso]")
@@ -32,14 +33,17 @@ btn3.disabled = true
 function modificar() {
    document.getElementById('div').innerHTML = '<b id="titulo" ><u>Modificar Importe</u></b>';
    document.getElementById('final').innerHTML = '';
+   document.getElementById('div2');
    console.log(nombres);
+   h2.hidden = true
+   spn.hidden = true
    btn.hidden = true
    btn2.hidden = true
    btn3.hidden = true
 
    nombres.map((x, i) => {
       let texto = document.createElement('Li')
-      texto.innerHTML += " <b>" + x.inpNombre + "</b>" + "  Gastó: <b>$" + "</b><input class='inputs' value=" + x.inpPuso + " id=" + i + "><hr>"
+      texto.innerHTML += " <b>" + x.inpNombre + "</b>" + "  Gastó: <b>$  " + "</b><input class='inputs' value=" + x.inpPuso + " id=" + i + "><hr>"
       final.appendChild(texto)
    })
 
@@ -49,7 +53,7 @@ function modificar() {
    botonOk.addEventListener('click', cambiar);
 
    botonOk.className = 'btn btn-primary btn-sm'
-   final.appendChild(botonOk)
+   div2.appendChild(botonOk)
 
 }
 
@@ -59,6 +63,9 @@ function cambiar(e) {
       nombres[i].inpPuso = document.getElementById(i).value
    }
    document.getElementById('div').innerHTML = ''
+   document.getElementById('div2').innerHTML = ''
+   h2.hidden = false
+   spn.hidden = false
    btn.hidden = false
    btn2.hidden = false
    btn3.hidden = false

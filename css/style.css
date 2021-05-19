@@ -70,19 +70,37 @@
          color: green;
       }
 
-      #div {
-         margin-top: 30;
-         margin-bottom: 5;
+      #div  {
+         margin-top: 0;
+         padding-top: 0;
+         margin-bottom: 5px;
          text-align: center;
       }
 
       .inputs {
          max-width: 30%;
+         max-height: 21px;
          display:inline-flex;
          justify-content: flex-end;
          border-style:solid;
+         color: red;
+         text-align: center;
       }
       
+      #div2 {
+         
+         text-align: center;
+      }
+
+      li  {
+        
+      }
+
+      #botonok {
+         height: 25px;
+         padding-top: 0%
+      ;
+      }
     
       
       
