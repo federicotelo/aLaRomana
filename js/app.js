@@ -1,3 +1,5 @@
+// - Service Worker -
+
 let url = window.location.href
 let swLocation = '/aLaRomana_V1/sw.js'
 
@@ -8,7 +10,7 @@ if (navigator.serviceWorker) {
    navigator.serviceWorker.register(swLocation);
 }
 
-
+//  - Inicio -
 
 let nombres = [];
 let div = document.getElementById("arr")
@@ -19,27 +21,39 @@ let nom = document.querySelector("input[name=nombre]")
 let puso = document.querySelector("input[name=puso]")
 let btn = document.getElementById("btn1")
 let btn2 = document.getElementById("btn2")
-let btn3 = document.getElementById("btn3")  //prueba boton modificar
+let btn3 = document.getElementById("btn3")
+let btn4 = document.getElementById("share")
 let p = document.getElementById("prfo")
 let final = document.getElementById("final")
-
 
 btn.addEventListener("click", guardar)
 btn2.addEventListener("click", () => location.reload())
 btn3.addEventListener("click", modificar)
-
+btn4.addEventListener("click", compartir)
 btn3.disabled = true
+btn4.hidden = true
+
+
+function compartir() {
+   navigator.share({
+      title: window.document.title,
+      url: window.document.location.href
+   }).then(() => {
+      console.log('ENIVIADO CORRECTAMENTE');
+   }).catch(console.error)
+}
 
 function modificar() {
    document.getElementById('div').innerHTML = '<b id="titulo" ><u>Modificar Importe</u></b>';
    document.getElementById('final').innerHTML = '';
    document.getElementById('div2');
-   console.log(nombres);
    h2.hidden = true
    spn.hidden = true
    btn.hidden = true
    btn2.hidden = true
    btn3.hidden = true
+   btn4.hidden = true
+
 
    nombres.map((x, i) => {
       let texto = document.createElement('Li')
@@ -50,11 +64,9 @@ function modificar() {
    let botonOk = document.createElement('button')
    botonOk.textContent = "Listo"
    botonOk.id = 'botonok'
-   botonOk.addEventListener('click', cambiar);
-
    botonOk.className = 'btn btn-primary btn-sm'
+   botonOk.addEventListener('click', cambiar);
    div2.appendChild(botonOk)
-
 }
 
 function cambiar(e) {
@@ -62,6 +74,7 @@ function cambiar(e) {
       console.log(document.getElementById(i).value)
       nombres[i].inpPuso = document.getElementById(i).value
    }
+
    document.getElementById('div').innerHTML = ''
    document.getElementById('div2').innerHTML = ''
    h2.hidden = false
@@ -69,15 +82,13 @@ function cambiar(e) {
    btn.hidden = false
    btn2.hidden = false
    btn3.hidden = false
+   if (nombres.length > 1) {
+      btn4.hidden = false
+   }
    res()
-
 }
 
-
-
 function guardar() {
-
-
    if (nom.value == "") return swal("Falta Nombre")
    let nomrep = false
    nombres.map(nombre => {
@@ -85,8 +96,6 @@ function guardar() {
          nomrep = true
       }
    })
-   console.log(nomrep);
-
    if (nomrep == true) return swal("Nombre Ya Existente")
    let nombreObj = {
       inpPuso: puso.value,
@@ -96,10 +105,12 @@ function guardar() {
    nombres.push(nombreObj)
    res()
    btn3.disabled = false
+   if (navigator.share && nombres.length > 1) {
+      btn4.hidden = false
+   }
    nom.value = ""
    puso.value = ""
 }
-
 
 function calcular() {
    if (ig.value) {                // usamos esto si se usa el input de Total Gastado
@@ -135,7 +146,6 @@ function res() {
          }
       })
    }
-
 }
 
 
