@@ -33,20 +33,18 @@ btn4.addEventListener("click", compartir)
 btn3.disabled = true
 btn4.hidden = true
 
-console.log(window.document.title);
+console.log(window);
 console.log(window.document.location);
 
 
 
 function compartir() {
-
-
-   // navigator.share({
-   //    title: window.document.title,
-   //    url: window.document.location.href
-   // }).then(() => {
-   //    console.log('ENIVIADO CORRECTAMENTE');
-   // }).catch(console.error)
+   navigator.share({
+      title: window.document.title,
+      url: nombres
+   }).then(() => {
+      console.log('ENIVIADO CORRECTAMENTE');
+   }).catch(console.error)
 }
 
 function modificar() {
@@ -112,7 +110,7 @@ function guardar() {
    res()
    btn3.disabled = false
    if (navigator.share && nombres.length > 1) {
-      btn4.hidden = true // para habilitar boton compartir poner false
+      btn4.hidden = false // para habilitar boton compartir poner false
    }
    nom.value = ""
    puso.value = ""
