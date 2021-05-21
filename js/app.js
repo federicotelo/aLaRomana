@@ -33,10 +33,6 @@ btn4.addEventListener("click", compartir)
 btn3.disabled = true
 btn4.hidden = true
 
-console.log(window);
-console.log(window.document.location);
-
-
 
 function compartir() {
    navigator.share({
@@ -63,6 +59,7 @@ function modificar() {
       let texto = document.createElement('Li')
       texto.innerHTML += " <b>" + x.inpNombre + "</b>" + "  Gastó: <b>$  " + "</b><input class='inputs' value=" + x.inpPuso + " id=" + i + "><hr>"
       final.appendChild(texto)
+
    })
 
    let botonOk = document.createElement('button')
@@ -86,9 +83,9 @@ function cambiar(e) {
    btn.hidden = false
    btn2.hidden = false
    btn3.hidden = false
-   if (nombres.length > 1) {
-      btn4.hidden = false
-   }
+   // if (nombres.length > 1) {
+   //    btn4.hidden = false               quitar comentartio para habilitar el boton compartir
+   // }
    res()
 }
 
@@ -110,7 +107,7 @@ function guardar() {
    res()
    btn3.disabled = false
    if (navigator.share && nombres.length > 1) {
-      btn4.hidden = false // para habilitar boton compartir poner false
+      btn4.hidden = true // para habilitar boton compartir poner false
    }
    nom.value = ""
    puso.value = ""
@@ -137,6 +134,7 @@ function res() {
          let texto = document.createElement('Li')
          texto.innerHTML += "<b>" + x.inpNombre + "</b>" + "<br> Gastó <b>$" + x.inpPuso + "</b>. Faltarian: <b>$" + (resultado - x.inpPuso).toFixed(2) + "</b><hr>"
          final.appendChild(texto)
+
       })
    } else {                          //si hay MAS de UNA PERSONA
       nombres.map((x) => {
