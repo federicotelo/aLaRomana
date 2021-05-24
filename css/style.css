@@ -82,7 +82,7 @@
          max-height: 21px;
          display:inline-flex;
          justify-content: flex-end;
-         border-style:solid;
+         border-style:none;
          color: red;
          text-align: center;
       }

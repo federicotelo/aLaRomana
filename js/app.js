@@ -12,6 +12,7 @@ if (navigator.serviceWorker) {
 
 //  - Inicio -
 
+let nombres2 = ['federico', 'monica'];
 let nombres = [];
 let div = document.getElementById("arr")
 let spn = document.getElementById("spn")
@@ -25,6 +26,9 @@ let btn3 = document.getElementById("btn3")
 let btn4 = document.getElementById("sharer")
 let p = document.getElementById("prfo")
 let final = document.getElementById("final")
+let pag2 = document.getElementById("contenido")
+
+
 
 btn.addEventListener("click", guardar)
 btn2.addEventListener("click", () => location.reload())
@@ -53,15 +57,11 @@ function modificar() {
    btn2.hidden = true
    btn3.hidden = true
    btn4.hidden = true
-
-
    nombres.map((x, i) => {
       let texto = document.createElement('Li')
-      texto.innerHTML += " <b>" + x.inpNombre + "</b>" + "  Gastó: <b>$  " + "</b><input class='inputs' value=" + x.inpPuso + " id=" + i + "><hr>"
+      texto.innerHTML += " <b>" + x.inpNombre + "</b>" + "  Gastó: <b>$  " + "</b><input type='number' onClick='this.select()' class='inputs' value=" + x.inpPuso + " id=" + i + "><hr>"
       final.appendChild(texto)
-
    })
-
    let botonOk = document.createElement('button')
    botonOk.textContent = "Listo"
    botonOk.id = 'botonok'
@@ -73,9 +73,9 @@ function modificar() {
 function cambiar(e) {
    for (let i = 0; i < nombres.length; i++) {
       console.log(document.getElementById(i).value)
+      if (document.getElementById(i).value == "") document.getElementById(i).value = 0
       nombres[i].inpPuso = document.getElementById(i).value
    }
-
    document.getElementById('div').innerHTML = ''
    document.getElementById('div2').innerHTML = ''
    h2.hidden = false
