@@ -1,6 +1,6 @@
 
 // SERVICEWORKER
-const ONLY_CACHE = 'cache-v3'
+const ONLY_CACHE = 'cache-v4'
 
 const APP_SHELL = [
    // '/',
