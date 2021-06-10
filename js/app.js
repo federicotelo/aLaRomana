@@ -1,7 +1,7 @@
 // - Service Worker -
 
 let url = window.location.href
-let swLocation = '/aLaRomana_V1/sw.js'
+let swLocation = '/alaromana/sw.js'
 
 if (navigator.serviceWorker) {
    if (url.includes("localhost")) {
