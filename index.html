@@ -22,10 +22,10 @@
       <hr>
    </header>
    <main>
-      <label for="ig">Cuanto Hay Que Pagar?</br>
-         <input type="number" name="ig" placeholder="No lo sabes, no importa"></br>
-      </label><br>
-      <div class="content">
+      <div class="text-center align-items-center">
+         <label for="ig">Cuanto Hay Que Pagar?</br>
+            <input type="number" name="ig" placeholder="No lo sabes, no importa"></br>
+         </label><br>
          <label for="nombre">Nombre</br>
             <input type="text" name="nombre" class="inp" autocomplete="off" required>
          </label>
@@ -34,6 +34,7 @@
             <input type="number" name="puso" class="inp">
          </label>
       </div>
+      <hr>
       <h2 class="animate__animated animate__backInUp" id="h2">Importe a pagar:<br> <span id="spn"></span></h2>
       <!-- <p id="prfo"></p></br> -->
       <!-- <ol id="arr"></ol> -->
@@ -42,10 +43,14 @@
          <button id="btn3" class="btn btn-primary btn-sm">Modificar</button>
          <button id="btn2" class="btn btn-primary btn-sm">Borrar</button>
       </div>
-      <div class="animate__animated animate__backInUp conten">
-         <div id='div'></div>
-         <ul id="final"></ul>
-         <div id='div2'></div>
+      <div class="row">
+         <div class="col-2"></div>
+         <div class="animate__animated animate__backInUp conten col-8">
+            <div id='div'></div>
+            <ul id="final"></ul>
+            <div id='div2'></div>
+         </div>
+         <div class="col-2"></div>
       </div>
       <button id="sharer" class="btn btn-primary btn-sm">Compartir</button>
 
